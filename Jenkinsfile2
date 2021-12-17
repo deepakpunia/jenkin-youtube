@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    input {
-          message 'name'
-          }
     stages{
         stage("echo a line"){
             steps{
@@ -10,6 +7,10 @@ pipeline{
             }
         }
         stage("run a command"){
+            input{
+                  message 'name'
+                  ok 'yes or no'
+            }
             steps{
                 sh "pwd"
             }
