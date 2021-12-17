@@ -1,24 +1,30 @@
 pipeline{
-    agent any
+    agent{
+        label "node"
+    }
     stages{
-        stage("A"){
+        stage("echo a line"){
             steps{
-                echo "========executing A========"
+                echo 'this is step one'
             }
         }
-        stage("B"){
+        stage("run a command"){
             steps{
-                echo "========executing B========"
+                sh "pwd"
             }
         }
-        stage("C"){
+        stage("run multiple command"){
             steps{
-                echo "========executing C========"
+                sh '''
+                pwd
+                ls
+                date
+                '''
             }
         }
         stage("D"){
             steps{
-                echo "========executing D========"
+                 input message: 'Continue', ok: 'Yes or No'
             }
         }
     }
