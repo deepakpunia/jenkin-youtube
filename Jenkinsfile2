@@ -9,7 +9,7 @@ pipeline{
         stage("run a command"){
             input{
                   message 'name'
-                  ok 'yes or no'
+                  ok 'yes'
             }
             steps{
                 sh "pwd"
