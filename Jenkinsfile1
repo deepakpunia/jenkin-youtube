@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label "node"
-    }
+    agent any
     stages{
         stage("echo a line"){
             steps{
@@ -22,7 +20,7 @@ pipeline{
                 '''
             }
         }
-        stage("D"){
+        stage("Want to continue"){
             steps{
                  input message: 'Continue', ok: 'Yes or No'
             }
