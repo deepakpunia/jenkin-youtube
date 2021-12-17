@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    parameters{
-            run filter: 'ALL', name: 'name'
-        }
     stages{
         stage("echo a line"){
             steps{
