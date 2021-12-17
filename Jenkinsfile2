@@ -1,10 +1,10 @@
 pipeline{
     agent any
-    input {
-          message 'name'
-          }
 
     stages{
+        input {
+          message 'name'
+          }
         stage("echo a line"){
             steps{
                 echo 'this is step one'
