@@ -11,6 +11,10 @@ pipeline{
                   message 'name'
                   ok 'yes'
             }
+            parameters{
+                       run filter: 'ALL', name: 'name'
+            }
+
             steps{
                 sh "pwd"
             }
